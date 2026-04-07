@@ -1,27 +1,38 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff4e8a, #8b0000);
   color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
-  margin-top: 80px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 input {
-  display: block;
-  width: 80%;
-  margin: 15px auto;
+  width: 100%;
   padding: 15px;
+  margin: 10px 0;
   border-radius: 10px;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 button {
-  padding: 15px 30px;
+  width: 100%;
+  padding: 15px;
   background: black;
   color: white;
   border: none;
@@ -30,21 +41,16 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #333;
+button:active {
+  transform: scale(0.98);
 }
 
-.contact a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
+.contact {
+  margin-top: 20px;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.3);
-  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
 }
-
