@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #ff4e8a, #8b0000);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin-top: 80px;
+}
+
+input {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+}
+
+button {
+  padding: 15px 30px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
+
+.contact a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+}
+
+table {
+  width: 80%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
