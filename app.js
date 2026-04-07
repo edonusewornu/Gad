@@ -1,7 +1,8 @@
 function calculate() {
   let name = document.getElementById("yourName").value;
   let crush = document.getElementById("crushName").value;
-
+window.calculate = calculate;
+window.loadData = loadData;
   if (name === "" || crush === "") {
     alert("Fill all fields!");
     return;
