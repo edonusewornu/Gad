@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>Admin Dashboard</h1>
+<table border="1" width="100%">
+<tr><th>Name</th><th>Crush</th></tr>
+<tbody id="data"></tbody>
+</table>
+</div>
+
+<script>
+fetch("https://api.jsonbin.io/v3/b/YOUR_BIN_ID/latest")
+.then(res => res.json())
+.then(data => {
+let table = document.getElementById("data");
+data.record.forEach(item => {
+table.innerHTML += `<tr><td>${item.name}</td><td>${item.crush}</td></tr>`;
+});
+});
+</script>
+
+</body>
+</html>

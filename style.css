@@ -1,0 +1,17 @@
+body {
+font-family: Arial;
+background: linear-gradient(#d81b60,#880e4f);
+color: white;
+text-align: center;
+margin:0;
+}
+.container {padding:20px;}
+input,button {
+width:90%;
+padding:15px;
+margin:10px;
+border:none;
+border-radius:10px;
+}
+button {background:#4a0000;color:white;}
+footer {margin-top:20px;padding:10px;background:#5a0030;}
