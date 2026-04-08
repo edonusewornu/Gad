@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculating Love... ❤️</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff512f, #dd2476);
+  background-size:400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.card {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  padding:40px;
+  border-radius:20px;
+  width:300px;
+}
+
+.result { display:none; }
+
+.percent {
+  font-size:50px;
+  margin:15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div id="loading">❤️ Calculating love...</div>
+
+  <div class="result" id="resultBox">
+    <h2 id="names"></h2>
+    <div class="percent" id="percent"></div>
+    <p id="message"></p>
+  </div>
+</div>
+
+<audio id="heartbeat" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const yourName = params.get("y");
+const crushName = params.get("c");
+
+document.getElementById("heartbeat").play();
+
+function generateLovePercent(a,b){
+  let total=0;
+  const str=a+b;
+  for(let i=0;i<str.length;i++){
+    total+=str.charCodeAt(i);
+  }
+  return total % 101;
+}
+
+const percent = generateLovePercent(yourName,crushName);
+
+function getMessage(p){
+  if(p>80) return "🔥 Perfect match! 💍";
+  if(p>60) return "💖 Strong connection!";
+  if(p>40) return "🙂 Not bad!";
+  if(p>20) return "😬 Hmm...";
+  return "💀 No chance 😭";
+}
+
+setTimeout(()=>{
+  document.getElementById("loading").style.display="none";
+  document.getElementById("resultBox").style.display="block";
+  document.getElementById("names").innerText = yourName + " ❤️ " + crushName;
+  document.getElementById("percent").innerText = percent + "%";
+  document.getElementById("message").innerText = getMessage(percent);
+},3000);
+</script>
+
+</body>
+</html>
